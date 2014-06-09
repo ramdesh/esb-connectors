@@ -35,7 +35,7 @@ import org.wso2.connector.integration.test.base.RestResponse;
 import org.apache.axiom.om.OMElement;
 import org.apache.commons.codec.binary.Base64;
 
-public class logglyConnectorIntegrationTest extends ConnectorIntegrationTestBase {
+public class LogglyConnectorIntegrationTest extends ConnectorIntegrationTestBase {
     
     private Map<String, String> esbRequestHeadersMap = new HashMap<String, String>();
     
@@ -67,7 +67,7 @@ public class logglyConnectorIntegrationTest extends ConnectorIntegrationTestBase
      * @throws XMLStreamException 
      */    
     @Test(priority = 1, description = "Loggly {uploadLogFile} integration test with mandatory parameters.")
-    public void testUploadBulkLogWithMandatoryParameters() throws IOException, JSONException, XMLStreamException{
+    public void testUploadLogFileWithMandatoryParameters() throws IOException, JSONException, XMLStreamException{
     
     	binaryUploadProxyUrl += "?apiUrl="+connectorProperties.getProperty("logglyApiUrl") + "&token="+connectorProperties.getProperty("token");
         String apiEndpoint = connectorProperties.getProperty("logglyApiUrl") + "/bulk/"+connectorProperties.getProperty("token") + "/tag/file_upload";
