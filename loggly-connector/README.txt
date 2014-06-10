@@ -28,15 +28,16 @@ STEPS:
  4. Navigate to "Integration_Test/products/esb/4.8.1/modules/integration/integration-base" and run the following command.
       $ mvn clean install
   
- 5. Make sure the "loggly" test suite is enabled (as given below) and all other test suites are either commented or removed in the following file - "Integration_Test/products/esb/4.8.1/modules/integration/connectors/src/test/resources/testng.xml"
-    <test name="loggly-Connector-Test" preserve-order="true" verbose="2">
+ 5. Copy the main and test folders from the provided "loggly" connector source bundle to the location "Integration_Test/products/esb/4.8.1/modules/integration/connectors/src/". 
+    Make sure the "loggly" test suite is enabled (as given below) and all other test suites are either commented or removed in the following file - "Integration_Test/products/esb/4.8.1/modules/integration/connectors/src/test/resources/testng.xml".
+    
+	<test name="loggly-Connector-Test" preserve-order="true" verbose="2">
         <packages>
             <package name="org.wso2.carbon.connector.integration.test.loggly"/>
         </packages>
     </test>
 	
- 6. Copy the main and test folders from the provided "loggly" connector source bundle to the location "Integration_Test/products/esb/4.8.1/modules/integration/connectors/src/". 
-	Copy pom.xml from the source bundle to "Integration_Test/products/esb/4.8.1/modules/integration/connectors/" and uncomment fhe following two blocks:
+ 6. Copy pom.xml from the source bundle to "Integration_Test/products/esb/4.8.1/modules/integration/connectors/" and uncomment fhe following two blocks:
 
 	<parent>
 	<groupId>org.wso2.esb</groupId>
@@ -70,7 +71,7 @@ STEPS:
 	viii) firstLine 	        - A random string value which will be logged Eg: "aaa".
 	ix) secondLine 				- A random string value which will be logged Eg: "bbb".	
 	
- 9. This API uses two types of authentication schemes. Those two types are authentication via Customer Token and Basic HTTP Accesss Authentication.  
+ 9. This API uses two types of authentication schemes. Those two types are authentication via Customer Token and Basic HTTP Access Authentication.  
 
 	i) Deriving the customer token:
 		
